@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arched Beam Design | Kishan Jagannath</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="assets/project3/project3.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+   <header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>KISHAN JAGANNATH</h1>
+        </div>
+        
+        <button class="hamburger" id="hamburger-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <section class="p3-hero">
+        <div class="container">
+            <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <h1>Design and Development of Arched Beam using Vacuum Infusion</h1>
+            <p class="subtitle">Optimized CFRP Structure for High Strength-to-Weight Ratio</p>
+            
+            <div class="p3-actions">
+                <a href="assets/project3/report.pdf" class="btn primary-btn" target="_blank">
+                    <i class="fas fa-file-pdf"></i> View Project Report
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="p3-content">
+        <div class="container">
+            <div class="text-block">
+                <p>
+                    The challenge was to design and manufacture a <strong>carbon fiber reinforced polymer (CFRP)</strong> arched beam capable of withstanding maximum compressive loads while maintaining a high strength-to-weight ratio. The competition constraints required the beam to fit within a specific volumetric envelope and sustain loading without catastrophic brittle failure.
+                </p>
+                <p>
+                    My primary engineering contribution was the ply schedule optimization and manufacturing strategy using <strong>Vacuum Assisted Resin Infusion (VARI)</strong>. Our initial design suffered from resin starvation and delamination at the vertical walls due to poor flow mesh placement. Learning from this, we engineered a <strong>Design 2 strategy</strong> featuring a continuous C-shaped ±45°/0° ply schedule. This geometry wrapped the carbon fabric from the top flange down the vertical walls to eliminate the butt-joint discontinuities that typically fail under shear.
+                </p>
+                <p>
+                    We also optimized the resin infusion ports to prevent race-tracking and ensure full saturation of the complex curves. Under 3-point bend testing (Instron), the optimized beam withstood a peak load of <strong>2,908 lbf (12.9 kN)</strong>. More importantly, it exhibited a progressive failure mode rather than snapping instantly, which resulted in <strong>80% higher energy absorption</strong> compared to the class average. This validated the C-shaped design strategy as a superior method for resisting shear loads in hollow composite structures.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="p3-gallery">
+        <div class="container">
+            <h3>Manufacturing & Destructive Testing</h3>
+            <div class="media-gallery p3-grid">
+                
+                <video controls poster="assets/project3/video_poster.png">
+                    <source src="assets/project3/video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <img src="assets/project3/image1.png" alt="Mold Prep & Layup" onerror="this.src='https://via.placeholder.com/600x400?text=Mold+Prep'">
+                <img src="assets/project3/image2.png" alt="Vacuum Infusion Process" onerror="this.src='https://via.placeholder.com/600x400?text=Resin+Infusion'">
+                <img src="assets/project3/image3.png" alt="Cured Carbon Fiber Part" onerror="this.src='https://via.placeholder.com/600x400?text=Cured+Part'">
+                <img src="assets/project3/image4.png" alt="Instron Test Setup" onerror="this.src='https://via.placeholder.com/600x400?text=Test+Setup'">
+                <img src="assets/project3/image5.png" alt="Failure Mode Analysis" onerror="this.src='https://via.placeholder.com/600x400?text=Failure+Analysis'">
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="p3-takeaways">
+        <div class="container">
+            <h2>Key Engineering Takeaways</h2>
+            <div class="takeaway-grid">
+                <div class="takeaway-card">
+                    <h3>Composite Manufacturing</h3>
+                    <p>Mastering Vacuum Assisted Resin Infusion (VARI) to produce void-free aerospace-grade parts.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Failure Analysis</h3>
+                    <p>Identifying interlaminar shear as the root cause of failure and redesigning the ply schedule to mitigate it.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Material Selection</h3>
+                    <p>Balancing the orthotropic properties of Carbon Fiber (0° for bending, ±45° for shear) to optimize structural performance.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Mechanical Testing</h3>
+                    <p>Validating simulation models against real-world Instron destructive testing data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kishan Jagannath. Built with Code.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const overlay = document.createElement('div');
+            overlay.id = 'lightbox-overlay';
+            document.body.appendChild(overlay);
+
+            const mediaItems = document.querySelectorAll('.media-gallery img, .media-gallery video');
+
+            function closeAll() {
+                overlay.classList.remove('visible');
+                mediaItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.tagName === 'VIDEO') item.pause(); 
+                });
+            }
+
+            mediaItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (this.classList.contains('active')) {
+                        closeAll();
+                    } else {
+                        closeAll();
+                        this.classList.add('active');
+                        overlay.classList.add('visible');
+                    }
+                });
+            });
+
+            overlay.addEventListener('click', closeAll);
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeAll();
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

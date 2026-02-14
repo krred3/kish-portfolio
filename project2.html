@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void Detection in COSB | Kishan Jagannath</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="assets/project2/project2.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>KISHAN JAGANNATH</h1>
+        </div>
+        
+        <button class="hamburger" id="hamburger-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <section class="p2-hero">
+        <div class="container">
+            <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <h1>Enhanced Void Detection in Composite Oriented Strand Board (COSB)</h1>
+            <p class="subtitle">Deep Learning & Micro-CT Segmentation (Amazon Collaboration)</p>
+            
+            </div>
+    </section>
+
+    <section class="p2-content">
+        <div class="container">
+            <div class="text-block">
+                <p>
+                    <strong>Composite Oriented Strand Board (COSB)</strong> is a sustainable, high-performance aerospace material made from reused prepreg strands. However, its random, complex microstructure makes identifying internal defects—specifically voids—notoriously difficult using traditional thresholding methods. Manual inspection of Micro-CT scans is labor-intensive and prone to human error, creating a bottleneck for mass production quality assurance.
+                </p>
+                <p>
+                    This research was conducted under the guidance of <strong>Dr. Bo Jin</strong> at the <strong>USC AME Department’s Composite Research Lab</strong>. In collaboration with Amazon, our goal was to automate this inspection process by developing a robust ground-truth pipeline for a Deep Learning segmentation model.
+                </p>
+                <p>
+                    My primary focus was the critical <strong>Data Engineering phase</strong>: I curated and annotated a massive dataset of over 2,500 Micro-CT slices using LabelMe, applying pixel-level precision to distinguish between carbon fiber strands, resin-rich areas, and jagged voids. This high-fidelity dataset was used to train and validate a U-Net architecture with an EfficientNet-B0 backbone, designed to learn the morphological signatures of defects in noisy X-ray environments.
+                </p>
+                <p>
+                    The resulting model achieved a <strong>Mean Intersection over Union (IoU) of 0.604</strong>, a dramatic improvement over baseline methods, proving that computer vision can effectively replace manual NDT (Non-Destructive Testing) workflows and enable scalable quality control for next-generation composites.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="p2-gallery">
+        <div class="container">
+            <h3>Micro-CT Analysis & Segmentation Results</h3>
+            <div class="media-gallery p2-grid">
+                <img src="assets/project2/image1.png" alt="Raw Micro-CT Scan" onerror="this.src='https://via.placeholder.com/600x400?text=Raw+Micro-CT'">
+                <img src="assets/project2/image2.png" alt="LabelMe Annotation Process" onerror="this.src='https://via.placeholder.com/600x400?text=Annotation+Process'">
+                <img src="assets/project2/image3.png" alt="U-Net Model Architecture" onerror="this.src='https://via.placeholder.com/600x400?text=Model+Architecture'">
+                <img src="assets/project2/image4.png" alt="Final Segmentation Result" onerror="this.src='https://via.placeholder.com/600x400?text=Segmentation+Result'">
+            </div>
+        </div>
+    </section>
+
+    <section class="p2-takeaways">
+        <div class="container">
+            <h2>Key Engineering Takeaways</h2>
+            <div class="takeaway-grid">
+                <div class="takeaway-card">
+                    <h3>Non-Destructive Testing (NDT)</h3>
+                    <p>Interpreting X-ray Computed Tomography (Micro-CT) data to assess structural integrity without damaging the part.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Data-Centric AI</h3>
+                    <p>Understanding that the quality of the dataset (Ground Truth) is just as critical as the model architecture in industrial ML applications.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Composite Characterization</h3>
+                    <p>Analyzing the microstructure of random-fiber composites and identifying failure-prone features like voids and resin-starved regions.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Cross-Functional Collaboration</h3>
+                    <p>Bridging the gap between Material Science research and scalable Software Engineering (Amazon) requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kishan Jagannath. Built with Code.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const overlay = document.createElement('div');
+            overlay.id = 'lightbox-overlay';
+            document.body.appendChild(overlay);
+
+            const mediaItems = document.querySelectorAll('.media-gallery img');
+
+            function closeAll() {
+                overlay.classList.remove('visible');
+                mediaItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+
+            mediaItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (this.classList.contains('active')) {
+                        closeAll();
+                    } else {
+                        closeAll();
+                        this.classList.add('active');
+                        overlay.classList.add('visible');
+                    }
+                });
+            });
+
+            overlay.addEventListener('click', closeAll);
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeAll();
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nano-Aircraft Wing Optimization | Kishan Jagannath</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="assets/project5/project5.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>KISHAN JAGANNATH</h1>
+        </div>
+        
+        <button class="hamburger" id="hamburger-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <section class="p5-hero">
+        <div class="container">
+            <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <h1>Design Optimization of a Nano-Aircraft Wing</h1>
+            <p class="subtitle">Bio-Inspired Aerodynamics for Micro Air Vehicles (MAV)</p>
+            
+            <div class="p5-actions">
+                <a href="assets/project5/report.pdf" class="btn primary-btn" target="_blank">
+                    <i class="fas fa-file-pdf"></i> View Project Report
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="p5-content">
+        <div class="container">
+            <div class="text-block">
+                <p>
+                    <strong>Micro Air Vehicles (MAVs)</strong> operate in a low Reynolds number regime where conventional aerodynamic principles break down and air viscosity dominates. The goal of this research was to design a high-efficiency wing for a dragonfly-inspired MAV by leveraging the <strong>"trapped vortex" effect</strong>, a phenomenon where corrugated surfaces keep airflow attached better than smooth airfoils at micro-scales. This work is currently being finalized for submission to the <em>AIAA Journal</em> as a peer-reviewed technical paper.
+                </p>
+                
+                <p>
+                    My contribution was transforming the initial 2D theoretical airfoil concepts into fully realized 3D wing geometries. I utilized <strong>Ansys Fluent</strong> to simulate the complex flow separation and vortex shedding behavior across various corrugation angles. The CFD analysis revealed that specific corrugation patterns could effectively trap vortices, delaying stall and significantly boosting lift. I then translated these aerodynamic profiles into 3D CAD models using <strong>Fusion 360</strong>, optimizing the planform shape for structural rigidity and printability.
+                </p>
+                <p>
+                    The final optimized wing design achieved a <strong>Lift-to-Drag (L/D) ratio of approximately 15</strong>, a highly efficient benchmark for nano-scale flight. To validate the simulation, we manufactured physical prototypes using 3D printing and conducted wind tunnel testing. The results confirmed that the bio-mimetic corrugated design outperformed traditional smooth airfoils in this flight regime, validating the transition from theoretical 2D analysis to a functional 3D aerodynamic surface.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="p5-gallery">
+        <div class="container">
+            <h3>CFD Simulation & Prototyping</h3>
+            <div class="media-gallery p5-grid">
+                <img src="assets/project5/image1.png" alt="Ansys Fluent Velocity Contours" onerror="this.src='https://via.placeholder.com/600x400?text=CFD+Analysis'">
+                <img src="assets/project5/image2.png" alt="Vortex Shedding Visualization" onerror="this.src='https://via.placeholder.com/600x400?text=Vortex+Visualization'">
+                <img src="assets/project5/image3.jpg" alt="3D CAD Model (Fusion 360)" onerror="this.src='https://via.placeholder.com/600x400?text=3D+Wing+Model'">
+                <img src="assets/project5/image4.png" alt="Wind Tunnel Testing Setup" onerror="this.src='https://via.placeholder.com/600x400?text=Wind+Tunnel+Test'">
+            </div>
+        </div>
+    </section>
+
+    <section class="p5-takeaways">
+        <div class="container">
+            <h2>Key Engineering Takeaways</h2>
+            <div class="takeaway-grid">
+                <div class="takeaway-card">
+                    <h3>Computational Fluid Dynamics (CFD)</h3>
+                    <p>Modeling laminar separation bubbles and vortex dynamics at low Reynolds numbers.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Bio-Mimicry</h3>
+                    <p>Translating natural flight mechanisms (dragonfly wings) into engineered geometric solutions.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Surface Modeling</h3>
+                    <p>Converting 2D airfoil coordinates into complex 3D lofted surfaces for manufacturing.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Academic Research</h3>
+                    <p>Synthesizing simulation data into a formal technical paper for peer review.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kishan Jagannath. Built with Code.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const overlay = document.createElement('div');
+            overlay.id = 'lightbox-overlay';
+            document.body.appendChild(overlay);
+
+            const mediaItems = document.querySelectorAll('.media-gallery img');
+
+            function closeAll() {
+                overlay.classList.remove('visible');
+                mediaItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+
+            mediaItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (this.classList.contains('active')) {
+                        closeAll();
+                    } else {
+                        closeAll();
+                        this.classList.add('active');
+                        overlay.classList.add('visible');
+                    }
+                });
+            });
+
+            overlay.addEventListener('click', closeAll);
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeAll();
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

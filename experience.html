@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Kishan Jagannath</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>KISHAN JAGANNATH</h1>
+        </div>
+        
+        <button class="hamburger" id="hamburger-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <section class="skills-section">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            
+            <div class="skill-category">
+                <h3>Design & Analysis</h3>
+                <div class="tags">
+                    <span>SolidWorks</span>
+                    <span>GD&T (ASME Y14.5)</span>
+                    <span>DFM/DFA</span>
+                    <span>Mechanism Design</span>
+                    <span>Abaqus (Hyperelasticity)</span>
+                    <span>Ansys (CFD/FEA)</span>
+                    <span>CATIA V5</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Manufacturing & Testing</h3>
+                <div class="tags">
+                    <span>Composite Fabrication</span>
+                    <span>Vacuum Infusion</span>
+                    <span>3D Printing (FDM/SLA)</span>
+                    <span>Instron Tensile Testing</span>
+                    <span>Micro-CT</span>
+                    <span>Metrology</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Electronics & Coding</h3>
+                <div class="tags">
+                    <span>Arduino</span>
+                    <span>Sensors (IMU, Load Cells)</span>
+                    <span>Python</span>
+                    <span>MATLAB</span>
+                    <span>C++</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-feed">
+        <div class="container">
+            <h2>Professional Experience</h2>
+
+            <div class="job-card">
+                <div class="job-logo">
+                    <img src="assets/images/usc_logo.png" alt="USC Logo" onerror="this.src='https://via.placeholder.com/80?text=USC'">
+                </div>
+                <div class="job-details">
+                    <div class="job-header">
+                        <h3>Graduate Research Assistant</h3>
+                        <span class="company">Zhao Research Group, USC</span>
+                        <span class="location">Los Angeles, CA</span>
+                        <span class="dates">Jan 2025 – Present</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Engineered a multi-layer flexible composite manufacturing process, integrating photolithography, wet etching, and precision blade coating to fabricate electro-programmable clutch arrays with <50µm layer thickness control.</li>
+                        <li>Optimized the electro-mechanical packaging of PVDF-TrFE-CFE dielectrics and copper electrodes, utilizing Design of Experiments (DOE) to refine curing cycles and adhesion, achieving a shear force capacity of 43.97 N/cm².</li>
+                        <li>Simulated large-deformation kinematics of fiber-reinforced pneumatic actuators in Abaqus Standard, implementing Mooney-Rivlin hyperelastic models (Ecoflex 0031) to predict multi-modal twisting and bending.</li>
+                        <li>Analyzed interlaminar failure modes between rigid-soft interfaces using Cohesive Zone Modeling (CZM) and contact mechanics, validating the FEA model against physical tensile data to reduce prototype iteration cycles by 30%.</li>
+                    </ul>
+                    
+                    <div class="media-gallery two-col">
+                        <video controls poster="assets/images/video_poster1.png">
+                            <source src="assets/videos/zhao_demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <video controls poster="assets/images/video_poster2.png">
+                            <source src="assets/videos/zhao_demo2.mp4" type="video/mp4">
+                        </video>
+                        <video controls poster="assets/images/video_poster3.png">
+                            <source src="assets/videos/zhao_demo3.mp4" type="video/mp4">
+                        </video>
+                        <img src="assets/images/zhao_research.png" alt="Research Setup" onerror="this.src='https://via.placeholder.com/300x200?text=Research+Image'">
+                    </div>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-logo">
+                    <img src="assets/images/jio_logo.jpg" alt="Jio Logo" onerror="this.src='https://via.placeholder.com/80?text=Jio'">
+                </div>
+                <div class="job-details">
+                    <div class="job-header">
+                        <h3>Mechanical Engineer Intern</h3>
+                        <span class="company">Jio Robotics</span>
+                        <span class="location">Columbia, Maryland</span>
+                        <span class="dates">Jan 2025 – Mar 2025</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Engineered advanced robotic end-effectors and modular mechanisms using CATIA V5 and SolidWorks, validating concepts with DMU Kinematics to reduce prototyping iterations by 30%.</li>
+                        <li>Conducted 1D/3D dimensional variation analysis and Tolerance Stack-up (GD&T) calculations on drive modules, resolving interface conflicts to ensure <1mm misalignment for precision-fit assembly.</li>
+                        <li>Applied Design for Manufacturing (DFM) principles to actuator mounts and structural components, reducing overall system weight by 4.6% while maintaining structural integrity under dynamic loads.</li>
+                        <li>Validated system robustness through rigorous field testing and iterative debugging, integrating vision-based control logic to improve autonomous docking reliability by 25%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-logo">
+                    <img src="assets/images/usc_logo.png" alt="USC Logo" onerror="this.src='https://via.placeholder.com/80?text=USC'">
+                </div>
+                <div class="job-details">
+                    <div class="job-header">
+                        <h3>Course Producer</h3>
+                        <span class="company">University of Southern California</span>
+                        <span class="location">Los Angeles, CA</span>
+                        <span class="dates">Aug 2025 – Dec 2025</span>
+                    </div>
+                    
+                    <h4 class="sub-role">AME 410: Design Theory and Methodology</h4>
+                    <ul class="job-bullets">
+                        <li>Mentored student teams through the product development lifecycle from Quality Function Deployment (QFD) to embodiment design, grading project milestones to ensure compliance with manufacturability and industry standards.</li>
+                    </ul>
+
+                    <h4 class="sub-role">AME 204: Mechanics of Materials and Structures</h4>
+                    <ul class="job-bullets">
+                        <li>Facilitated learning in solid mechanics, clarifying complex concepts in stress transformation and beam deflection, while grading assessments to validate mastery of structural failure analysis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-logo">
+                    <img src="assets/images/azper_logo.jpg" alt="Azper Logo" onerror="this.src='https://via.placeholder.com/80?text=Azper'">
+                </div>
+                <div class="job-details">
+                    <div class="job-header">
+                        <h3>CFD Engineer Intern</h3>
+                        <span class="company">Azper Science</span>
+                        <span class="location">Bangalore, India</span>
+                        <span class="dates">July 2022 – Oct 2025</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Optimized the aerodynamic topology of a contra-rotating propeller drone, simulating rotor-body interaction and slipstream effects in Ansys Fluent to predict thrust loss and stability risks.</li>
+                        <li>Redesigned fuselage components in SolidWorks based on flow trajectory analysis, modifying intake geometry to minimize drag, achieving an 8% improvement in overall flight efficiency.</li>
+                    </ul>
+
+                    <div class="media-gallery two-col">
+                        <img src="assets/images/azper_drone1.png" alt="Drone Analysis" onerror="this.src='https://via.placeholder.com/300x200?text=CFD+Analysis'">
+                        <img src="assets/images/azper_drone2.png" alt="Fuselage Design" onerror="this.src='https://via.placeholder.com/300x200?text=Fuselage+CAD'">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kishan Jagannath. Built with Code.</p>
+    </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Create the dark overlay div automatically
+        const overlay = document.createElement('div');
+        overlay.id = 'lightbox-overlay';
+        document.body.appendChild(overlay);
+
+        // Select all media items
+        const mediaItems = document.querySelectorAll('.media-gallery img, .media-gallery video');
+
+        // Function to close everything
+        function closeAll() {
+            overlay.classList.remove('visible');
+            mediaItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.tagName === 'VIDEO') item.pause(); // Pause videos on close
+            });
+        }
+
+        // 2. Add Click Events to Images/Videos
+        mediaItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation(); // Stop click from hitting the background immediately
+                
+                // If this item is already open, close it
+                if (this.classList.contains('active')) {
+                    closeAll();
+                } else {
+                    // Otherwise, close others and open this one
+                    closeAll();
+                    this.classList.add('active');
+                    overlay.classList.add('visible');
+                }
+            });
+        });
+
+        // 3. Close when clicking the dark background
+        overlay.addEventListener('click', closeAll);
+
+        // 4. Close when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeAll();
+        });
+    });
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

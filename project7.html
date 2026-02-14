@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portable Mechatronic Device | Kishan Jagannath</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="assets/project7/project7.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>KISHAN JAGANNATH</h1>
+        </div>
+        
+        <button class="hamburger" id="hamburger-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <section class="p7-hero">
+        <div class="container">
+            <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <h1>Portable Mechatronic Communication Device</h1>
+            <p class="subtitle">Ruggedized Field Communication & Sensor System</p>
+            
+            <div class="p7-actions">
+                <a href="assets/project7/report.pdf" class="btn primary-btn" target="_blank">
+                    <i class="fas fa-file-pdf"></i> View Project Report
+                </a>
+                <a href="https://github.com/krred3/slingo-mechatronics" class="btn secondary-btn" target="_blank">
+                    <i class="fab fa-github"></i> View Firmware Code
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="p7-content">
+        <div class="container">
+            <div class="text-block">
+                <p>
+                    The objective was to reverse-engineer an existing consumer radio and rebuild it into a ruggedized, multi-functional device for field use. The target users were hikers and emergency responders who need hands-free lighting and communication without relying on cellular networks.
+                </p>
+                <p>
+                    My role focused on the system architecture and hardware integration. We initially attempted to use an ESP32 for its wireless capabilities but quickly identified stability issues with the audio libraries. Pivoting to a robust <strong>Arduino Mega 2560</strong> platform, I integrated multiple independent modules including an FM Radio (TEA5767), PIR Motion Sensor, and Bluetooth Audio. I wrote the C++ firmware to manage the state machine, allowing the device to wake up instantly upon detecting motion and toggle between radio and Bluetooth modes seamlessly.
+                </p>
+                <p>
+                    While the electronic and software integration was successful, the mechanical execution highlighted critical constraints in rapid prototyping. We utilized a provisional enclosure that lacked proper strain relief for the complex wiring harness. During final testing, although the power management system delivered <strong>3 hours of runtime</strong> and all sensors functioned correctly, the internal connections were fragile. This failure demonstrated that for a device to be truly "rugged," the mechanical packaging and PCB design must be prioritized alongside the firmware, rather than treated as an afterthought.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="p7-gallery">
+        <div class="container">
+            <h3>System Integration & Prototyping</h3>
+            <div class="media-gallery p7-grid">
+                
+                <video controls poster="assets/project7/video_poster.png">
+                    <source src="assets/project7/video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <img src="assets/project7/image1.png" alt="Circuit Wiring" onerror="this.src='https://via.placeholder.com/600x400?text=Circuit+Wiring'">
+                <img src="assets/project7/image2.jpg" alt="Arduino Integration" onerror="this.src='https://via.placeholder.com/600x400?text=Arduino+Logic'">
+                <img src="assets/project7/image3.png" alt="Enclosure Assembly" onerror="this.src='https://via.placeholder.com/600x400?text=Assembly'">
+                <img src="assets/project7/image4.png" alt="Final Device Testing" onerror="this.src='https://via.placeholder.com/600x400?text=Field+Test'">
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="p7-takeaways">
+        <div class="container">
+            <h2>Key Engineering Takeaways</h2>
+            <div class="takeaway-grid">
+                <div class="takeaway-card">
+                    <h3>Mechatronic Integration</h3>
+                    <p>Interfacing analog sensors and digital communication modules on a single microcontroller bus.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Rapid Prototyping</h3>
+                    <p>Learning that breadboarded circuits are not viable for field-deployable hardware.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>State Machine Logic</h3>
+                    <p>Programming non-blocking code to handle real-time sensor inputs (motion) while playing audio.</p>
+                </div>
+                <div class="takeaway-card">
+                    <h3>Power Budgeting</h3>
+                    <p>Managing current draw from high-power LEDs and audio amplifiers to maximize battery life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kishan Jagannath. Built with Code.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const overlay = document.createElement('div');
+            overlay.id = 'lightbox-overlay';
+            document.body.appendChild(overlay);
+
+            const mediaItems = document.querySelectorAll('.media-gallery img, .media-gallery video');
+
+            function closeAll() {
+                overlay.classList.remove('visible');
+                mediaItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.tagName === 'VIDEO') item.pause(); 
+                });
+            }
+
+            mediaItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (this.classList.contains('active')) {
+                        closeAll();
+                    } else {
+                        closeAll();
+                        this.classList.add('active');
+                        overlay.classList.add('visible');
+                    }
+                });
+            });
+
+            overlay.addEventListener('click', closeAll);
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeAll();
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
